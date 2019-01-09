@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #282827;
+    background: #f4f4f4;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.page {
+    max-width:600px;
+    margin: 0 auto;
+    border-top: 0.5em solid #c7cacc;
+    background: #ffffff;
+}
+
+section {
+    padding:20px;
+}
+
+footer {
+    font-size: 85%;
+    text-align: center;
+    color: #aaaaaa;
+}
+
+h1 {
+    text-align: center;
+}
+
+.messages {
+    padding: 10px;
+    border: 1px solid #b91028;
+    background: #d0122d;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-end;
+    margin: 0 0 20px 0;
+}
+
+.form--edit-contact label {
+    display: inline-block;
+}
+
+@media screen and (min-width: 480px) {
+    .form--edit-contact label {
+        width: 20%;
+    }
+}
+
+input[type="submit"] {
+    border: 1px solid #b91028;
+    background: #d0122d;
+    color:#ffffff;
+    cursor: pointer;
+    width:150px;
+    padding: 3px;
+}
+
+input[type="submit"]:hover {
+    background: #b91028;
+}
+
+.table {
+    width: 100%;
+}
+
+.table th {
+    text-align: left;
+}
+
+.membership {
+    margin: 10px 0;
+}

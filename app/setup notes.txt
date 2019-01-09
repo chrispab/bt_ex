@@ -1,0 +1,77 @@
+some command line history for ref of setup:
+732  03/12/18 20:50:17 sudo apt update
+  733  03/12/18 20:51:05 sudo apt upgrade
+  734  03/12/18 20:52:26 sudo apt install apache2
+  735  03/12/18 20:54:03 sudo apt install mariadb-server mariadb-client
+  736  03/12/18 20:57:38 sudo apt install php php-common php-mysql php-gd php-cli
+  737  03/12/18 21:00:02 echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php
+  738  03/12/18 21:15:35 sudo apt install mysql-workbench
+  739  03/12/18 21:18:06 mysql-workbench
+  740  03/12/18 21:29:55 sudo mysql -u root -p
+  741  03/12/18 21:31:29 sudo systemctl restart apache2
+  742  03/12/18 21:32:10 sudo apt install phpmyadmin
+  743  03/12/18 22:04:14 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  744  03/12/18 22:04:23 php -r "if (hash_file('sha384', 'composer-setup.php') === '93b54496392c062774670ac18b134c3b3a95e5a5e5c8f1a9f115f203b75bf9a129d5daa8ba6a13e2cc8a1da0806388a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  745  03/12/18 22:04:32 php composer-setup.php
+  746  03/12/18 22:04:42 php -r "unlink('composer-setup.php');"
+  747  03/12/18 22:05:21 mv composer.phar /usr/local/bin/composer
+  748  03/12/18 22:05:30 sudo mv composer.phar /usr/local/bin/composer
+  749  03/12/18 22:05:58 composer
+  750  04/12/18 09:57:34 sudo hcitool lescan
+  751  04/12/18 17:32:11 npm start
+  752  04/12/18 19:18:35 composer start
+  753  04/12/18 16:20:36 sudo apt install gnome-tweaks
+  754  04/12/18 16:20:54 gnome-tweaks
+  755  04/12/18 21:43:35 tar -xvzf xdebug-2.6.1.tgz
+  756  04/12/18 21:43:46 cd xdebug-2.6.1
+  757  04/12/18 21:43:58 phpsize
+  758  04/12/18 21:44:44 sudo apt install php7.0-dev
+  759  04/12/18 21:45:13 sudo apt install php7.2-dev
+  760  04/12/18 21:46:31 phpsize
+  761  04/12/18 21:47:15 phpize
+  762  04/12/18 21:47:46 ./configure
+  763  04/12/18 21:47:59 make
+  764  04/12/18 21:48:52 make test
+  765  04/12/18 21:49:12 cp modules/xdebug.so /usr/lib/php/20170718
+  766  04/12/18 21:49:20 sudo cp modules/xdebug.so /usr/lib/php/20170718
+  767  04/12/18 21:49:34 nano /etc/php/7.2/apache2/php.ini
+  768  04/12/18 21:51:07 sudo nano /etc/php/7.2/apache2/php.ini
+  769  05/12/18 08:33:55 skype
+  770  04/12/18 18:47:14 git clone https://bitbucket.org/britishtriathloninterviews/interview-1811-cb/ .
+  771  04/12/18 18:48:08 git checkout develop
+  772  04/12/18 18:48:38 composer update
+  773  04/12/18 18:50:45 vscode .
+  774  04/12/18 18:50:51 code .
+  775  05/12/18 00:53:09 sudo apt-get install wine
+  776  05/12/18 01:07:24 sudo apt-get install --install-recommends winehq-stable
+  777  05/12/18 01:07:39 sudo apt-get install  winehq-stable
+  778  05/12/18 01:08:05 sudo dpkg --add-architecture i386
+  779  05/12/18 01:08:19 wget -nc https://dl.winehq.org/wine-builds/Release.key
+  780  05/12/18 01:08:29 sudo apt-key add Release.key
+  781  05/12/18 01:08:41 sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
+  782  05/12/18 01:09:16 sudo apt-get update
+  783  05/12/18 01:09:44 sudo apt-get install --install-recommends winehq-stable
+  784  04/12/18 22:16:10 php -S localhost:8080 -c /etc/php/7.2/apache2/php.ini
+  785  04/12/18 22:18:07 composer start
+  786  05/12/18 15:36:44 git branch task3
+  787  05/12/18 15:36:52 git checkout task3
+  788  05/12/18 15:37:07 git status
+  789  05/12/18 15:38:05 composer start
+  790  05/12/18 16:11:32 git status
+  791  05/12/18 18:40:52 npm start
+
+  to setup xdebug also with vscode:
+
+  for vscode "PHP debug" extention:
+  Install the extension: Press F1, type ext install php-debug.
+
+This extension is a debug adapter between VS Code and XDebug by Derick Rethan. XDebug is a PHP extension (a .so file on Linux and a .dll on Windows) that needs to be installed on your server.
+
+Install XDebug I highly recommend you make a simple test.php file, put a phpinfo(); statement in there, then copy the output and paste it into the XDebug installation wizard. It will analyze it and give you tailored installation instructions for your environment. In short:
+On Windows: Download the appropiate precompiled DLL for your PHP version, architecture (64/32 Bit), thread safety (TS/NTS) and Visual Studio compiler version and place it in your PHP extension folder.
+On Linux: Either download the source code as a tarball or clone it with git, then compile it.
+Configure PHP to use XDebug by adding zend_extension=path/to/xdebug to your php.ini. The path of your php.ini is shown in your phpinfo() output under "Loaded Configuration File".
+Enable remote debugging in your php.ini:
+[XDebug]
+xdebug.remote_enable = 1
+xdebug.remote_autostart = 1
