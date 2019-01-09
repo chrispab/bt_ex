@@ -75,3 +75,14 @@ Enable remote debugging in your php.ini:
 [XDebug]
 xdebug.remote_enable = 1
 xdebug.remote_autostart = 1
+
+
+to launch from vs code  with php internal server
+   25  composer update
+   26  php -S localhost:8080/ -c /etc/php/7.2/apache2/php.ini
+   27  cd public
+   28  php -S localhost:8080/ -c /etc/php/7.2/apache2/php.ini
+   29  php -S localhost:8080/public -c /etc/php/7.2/apache2/php.ini
+   30  cd public
+   31  php -S localhost:8080 -c /etc/php/7.2/apache2/php.ini
+   
