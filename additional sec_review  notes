@@ -1,0 +1,61 @@
+Application authentication
+SSL
+
+
+CSRF
+XSS
+prepared parametised queries
+    Prepared statements are very useful against SQL injections, because parameter values, which are transmitted later using a 
+    different protocol, need not be correctly escaped. If the original statement template is not derived from external input, 
+    SQL injection cannot occur.
+
+
+
+db exception capture
+
+improve navigation for user
+
+set in contactsconytroller
+
+            // set flash message but only if the record has been changed in the database
+            if($update > 0){  //!!!  was >=0, or use $update alone
+                $this->container->flash->addMessage('update', "<strong>".$data['contact']['first_name'] . " " . $data['contact']['last_name'] . "'s</strong> record has been updated successfully!");
+            }
+
+ContactsModel.php
+use prepraerd statements avoid injection
+
+
+client side validation
+
+xdebug composer json edit allow debug builit server
+
+
+
+questions
+development/training? learning
+ethos/culture
+typical day/week
+induction to systems and framework/tool/workflows etc
+if not succesful, any feedback on arears to improve study on?
+who can access your services is it all public or just a few?
+
+
+
+
+
+Libraries have been installed in:
+   /home/chris/Desktop/jobtest/xdebug/xdebug-2.6.1/modules
+
+zend_extension = /usr/lib/php/20170718/xdebug.so
+
+
+php -S localhost:8080 -c /usr/local/etc/php/5.5/php.ini
+
+php -S localhost:8080 -c /etc/php/7.2/apache2/php.ini
+
+
+        // "start": "php -S localhost:8080 -t public",
+
+
+
