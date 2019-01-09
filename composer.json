@@ -23,10 +23,11 @@
         }
     },
     "config": {
-        "process-timeout" : 0
+        "process-timeout": 0
     },
     "scripts": {
-        "start": "php -S localhost:8080 -t public",
+        "startold": "php -S localhost:8080 -t public",
+        "start": "php -S localhost:8080 -c /etc/php/7.2/apache2/php.ini -t public",
         "test": "phpunit"
     }
 

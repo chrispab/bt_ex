@@ -1,4 +1,4 @@
-# British Triathlon Interview
+#  Interview
 
 Below are 3 tasks we would like you to attempt.
 
