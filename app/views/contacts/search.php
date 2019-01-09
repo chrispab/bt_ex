@@ -1,5 +1,12 @@
 <?php require_once '../app/views/includes/header.php';?>
 
+<!-- //! include csrf protection on pages
+//!no security login required - Authentication
+//!Cross Site Request Forgery
+//! Prevention: Store a secret token in a hidden form field which is inaccessible from the 3rd party site.
+//Properly escape any information you serve the user
+re-validate the data in PHP as well too.  -->
+
 <h3>Search Contacts</h3>
 
 <?php if($data['messages']){ ?>

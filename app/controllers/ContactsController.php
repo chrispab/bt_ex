@@ -14,9 +14,11 @@ class ContactsController extends BaseController {
         // get the search data
         $filters = $request->getParams();
         
+        //! repeated statement - from above - not reqd again - remove
         // declare the contacts model
         $model = $this->container->contactsModel;  
         
+        //! escape/clean the form data
         // search for all contacts that match the search criteria
         $data['contacts'] = $model->getContacts($filters);
 
@@ -30,12 +32,14 @@ class ContactsController extends BaseController {
         return $this->view->render($response, 'contacts/search.php', $data);
 
     }
-    
+
+    //! use prepared statements avoid sql injection via model, 
     public function edit(Request $request, Response $response, $args) {
         
         // declare the contacts model
         $model = $this->container->contactsModel;  
         
+        //! escape/clean/revalidate the form data
         // get the details for this contact
         $data['contact'] = $model->getContact($args['id']);
         $data['membership_renewals'] = $model->getMembershipRenewals($args['id']);
@@ -49,7 +53,7 @@ class ContactsController extends BaseController {
             $update = $model->updateContact($request->getParsedBody());
             
             // set flash message but only if the record has been changed in the database
-            if($update >= 0){
+            if($update > 0){  //!!!  was originally >=0, or use $update alone
                 $this->container->flash->addMessage('update', "<strong>".$data['contact']['first_name'] . " " . $data['contact']['last_name'] . "'s</strong> record has been updated successfully!");
             }
             
