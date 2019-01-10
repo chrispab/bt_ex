@@ -7,8 +7,6 @@
 //Properly escape any information you serve the user
 re-validate the data in PHP as well too.  -->
 
-
-
 <h3>Search Contacts</h3>
 
 <?php if($data['messages']){ ?>
@@ -19,7 +17,6 @@ re-validate the data in PHP as well too.  -->
 
 <button type="button" onclick="UnderlineRows()">Underline rows</button>
 <button type="button" onclick="removeEmailUnderlines()">remove email Underlines</button>
-
 <button type="button" onclick="hideRows()">hide rows</button>
 <button type="button" onclick="advanceEffect()">Underline Males, de-underline email, remove rows </button>
 
@@ -27,8 +24,18 @@ re-validate the data in PHP as well too.  -->
 <form class="form form--search-contacts">
     <div class="form__container">
         <input class="form__input" type="text" name="name" value="" placeholder="Contact name" style="flex-grow: 2">
-        <input class="form__submit" type="submit" value="Search"> 
+     </div> 
+
+    <div class="form__container">
+        <label>choose</label>
+        <select  class="form__input" name="active" style="flex-grow: 2; margin-left: 10px; margin-right: 10px;">
+            <option value="">All</option>
+            <option value="Y">Yes</option>
+            <option value="N">No</option>
+        </select>
+        <input class="form__submit" type="submit" value="Search">
     </div>
+
 </form>
 
 <table class="table table--contacts">
