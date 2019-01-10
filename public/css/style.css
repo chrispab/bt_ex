@@ -82,3 +82,22 @@ input[type="submit"]:hover {
 .membership {
     margin: 10px 0;
 }
+
+tr:nth-child(odd) {
+    background: #ace974;
+  }
+
+.form--search-contacts input[type="submit"]{
+   
+    border-radius: 20px;
+    border: 2px solid rgb(26, 23, 23);
+    padding: 10px;
+
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+
+}

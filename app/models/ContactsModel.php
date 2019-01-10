@@ -23,11 +23,17 @@ class ContactsModel extends BaseModel {
     
     public function getContact($id){
         
-        $sql = "SELECT * FROM contacts WHERE id = $id";
+        //$sql = "SELECT * FROM contacts WHERE id = $id";
+        $sql = "SELECT * FROM contacts WHERE id = :contactID";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':contactID', $id);
 
-        $stmt = $this->pdo->query($sql);
+        //$stmt = $this->pdo->query($sql);
         
+        //return $stmt->fetch();
+        $stmt->execute();
         return $stmt->fetch();
+
         
     }
     

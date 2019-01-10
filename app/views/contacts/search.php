@@ -7,6 +7,8 @@
 //Properly escape any information you serve the user
 re-validate the data in PHP as well too.  -->
 
+
+
 <h3>Search Contacts</h3>
 
 <?php if($data['messages']){ ?>
@@ -14,6 +16,11 @@ re-validate the data in PHP as well too.  -->
     <?php echo reset($data['messages']['update']); ?>
 </div>
 <?php } ?>
+
+<button type="button" onclick="changeRows()">Underline rows</button>
+<button type="button" onclick="myFunction()">Set font Italic</button>
+<button type="button" onclick="underline_text()">Set font Underline</button>
+
 
 <form class="form form--search-contacts">
     <div class="form__container">
@@ -33,8 +40,8 @@ re-validate the data in PHP as well too.  -->
     </thead>
     <tbody>
         <?php foreach($data['contacts'] as $contact){ ?>
-        <tr>
-            <td><?php echo $contact['first_name'] . " " . $contact['last_name'];?></td>
+        <tr >
+            <td class="changeMe" id="myU"><?php echo $contact['first_name'] . " " . $contact['last_name'];?></td>
             <td><?php echo $contact['email'];?></td>
             <td><?php echo $contact['active'] == '1' ? 'Yes' : 'No';?></td>
             <td><a href="/edit/<?php echo $contact['id'];?>" class="button button--red">Edit</a></td>
@@ -44,5 +51,19 @@ re-validate the data in PHP as well too.  -->
 </table>
 
 </section>
+
+<script>
+function changeRows() {
+    document.getElementsByClassName("changeMe").style.textDecorattion = "underline";
+}
+
+function myFunction() {
+    document.getElementById("myU").style.fontStyle = "italic";
+}
+function underline_text(){
+    document.getElementById("myU").style.textDecoration = "underline";
+}
+
+</script>
 
 <?php require_once '../app/views/includes/footer.php';?>
