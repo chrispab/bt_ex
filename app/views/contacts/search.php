@@ -27,9 +27,9 @@ re-validate the data in PHP as well too.  -->
      </div> 
 
     <div class="form__container">
-        <label>choose</label>
-        <select  class="form__input" name="active" style="flex-grow: 2; margin-left: 10px; margin-right: 10px;">
-            <option value="">No filter</option>
+        <label>Filter Active?</label>
+        <select  class="form__input" name="active" style="flex-grow: 2;">
+            <option value="None">No filter</option>
             <option value="Active">Active</option>
             <option value="Inactive">Inactive</option>
         </select>
