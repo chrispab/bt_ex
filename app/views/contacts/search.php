@@ -54,6 +54,9 @@ re-validate the data in PHP as well too.  -->
 
 <script>
 function changeRows() {
+    //setup a counter to track button presses
+    //perform diff actions dep on 1st, 2nd or 3rd click
+    
     document.getElementsByClassName("changeMe").style.textDecorattion = "underline";
 }
 
