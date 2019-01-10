@@ -28,11 +28,11 @@ re-validate the data in PHP as well too.  -->
 
     <div class="form__container">
         <label>Filter Active?</label>
-        <select  class="form__input" name="active" style="flex-grow: 2;">
-            <option value="None">No filter</option>
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
-        </select>
+
+
+        <input type="radio" name="active" value="None" checked>None<br>
+        <input type="radio" name="active" value="Active">Active<br>
+        <input type="radio" name="active" value="Inactive">Inactive
         <input class="form__submit" type="submit" value="Search">
     </div>
 
