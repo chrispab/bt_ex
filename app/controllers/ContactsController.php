@@ -60,6 +60,7 @@ class ContactsController extends BaseController {
                 $resultArray[$fieldName] = $fieldValue;
             }
             // update the record
+            //! replace parse body with resultArray
             $update = $model->updateContact($request->getParsedBody());//returns array of parsed items from form
 
             //var_dump($request->getParsedBody());exit();

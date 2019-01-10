@@ -17,9 +17,11 @@ re-validate the data in PHP as well too.  -->
 </div>
 <?php } ?>
 
-<button type="button" onclick="changeRows()">Underline rows</button>
-<button type="button" onclick="myFunction()">Set font Italic</button>
-<button type="button" onclick="underline_text()">Set font Underline</button>
+<button type="button" onclick="UnderlineRows()">Underline rows</button>
+<button type="button" onclick="removeEmailUnderlines()">remove email Underlines</button>
+
+<button type="button" onclick="hideRows()">hide rows</button>
+<button type="button" onclick="advanceEffect()">Underline Males, de-underline email, remove rows </button>
 
 
 <form class="form form--search-contacts">
@@ -40,9 +42,9 @@ re-validate the data in PHP as well too.  -->
     </thead>
     <tbody>
         <?php foreach($data['contacts'] as $contact){ ?>
-        <tr >
-            <td class="changeMe" id="myU"><?php echo $contact['first_name'] . " " . $contact['last_name'];?></td>
-            <td><?php echo $contact['email'];?></td>
+        <tr class="<?php echo ($contact['gender'] == 'M' ? 'Male' : 'Female'); ?>">
+            <td><?php echo $contact['first_name'] . " " . $contact['last_name'];?></td>
+            <td class="emailCell"><?php echo $contact['email'];?></td>
             <td><?php echo $contact['active'] == '1' ? 'Yes' : 'No';?></td>
             <td><a href="/edit/<?php echo $contact['id'];?>" class="button button--red">Edit</a></td>
         </tr>
@@ -53,18 +55,69 @@ re-validate the data in PHP as well too.  -->
 </section>
 
 <script>
-function changeRows() {
-    //setup a counter to track button presses
+function UnderlineRows() {
+    //setup a counter to track button presses - static var??
     //perform diff actions dep on 1st, 2nd or 3rd click
     
-    document.getElementsByClassName("changeMe").style.textDecorattion = "underline";
+    
+    // document.getElementsByClassName("Male").style.textDecoration = "underline";
+    //document.getElementsByClassName("Male").[1].style.backgroundColor = "red";
+
+    var x = document.getElementsByClassName("Male");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.textDecoration = "underline";
+    }
 }
 
-function myFunction() {
-    document.getElementById("myU").style.fontStyle = "italic";
+function removeEmailUnderlines() {
+    //setup a counter to track button presses - static var??
+    //perform diff actions dep on 1st, 2nd or 3rd click
+    
+    
+    // document.getElementsByClassName("Male").style.textDecoration = "underline";
+    //document.getElementsByClassName("Male").[1].style.backgroundColor = "red";
+
+    var x = document.getElementsByClassName("Male");// grab rows
+    var i;
+    for (i = 0; i < x.length; i++) {
+        
+        //x[i].children[3].style.textDecoration = "";
+        //x[i].cells[1].style.textDecoration = "none";
+        x[i].cells[1].style.backgroundColor = "red"; //!why?
+    }
 }
-function underline_text(){
-    document.getElementById("myU").style.textDecoration = "underline";
+
+function hideRows() {
+    var x = document.getElementsByClassName("Male");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+}
+
+
+var counter = 1;
+function advanceEffect(){
+    switch(counter) {
+        case 1:
+            // code block
+            alert("one");
+            UnderlineRows();
+            break;
+        case 2:
+            // code block
+            alert("two");
+            break;
+        case 3:
+            // code block
+            alert("three");
+            break;    
+        default:
+            // code block
+    }
+    //document.getElementById("myU").style.textDecoration = "underline";
+    counter++;
 }
 
 </script>
