@@ -6,6 +6,11 @@ class ContactsModel extends BaseModel {
     public function getContacts($filters = array()){
         
         $sql = "SELECT * FROM contacts";
+        
+        //clean form data recieved
+        //better to do the cleaning in the contacts controller which use this model to get/update data
+        //$filters['name']= $this->test_input($filters['name']); //! how to avoid text that would break the query?- restrict to a term that will work in sql query
+
 
         if(isset($filters['name'])){
             $sql .= " WHERE CONCAT(first_name,' ',last_name) LIKE '%" . $filters['name'] . "%'";
@@ -13,8 +18,7 @@ class ContactsModel extends BaseModel {
 
         $stmt = $this->pdo->query($sql);
         
-        return $stmt->fetchAll();
-        
+        return $stmt->fetchAll();        
     }
     
     public function getContact($id){
@@ -56,5 +60,12 @@ class ContactsModel extends BaseModel {
         return $stmt->rowCount();
         
     }
+
+    public function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
     
 }

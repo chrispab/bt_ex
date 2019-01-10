@@ -15,7 +15,7 @@ XSS escape HTML chars - don’t return HTML tags to the client. defending agains
     <label for="email">Active: </label><input id="active" class="form__input" type="text" name="active" value="<?php echo $data['contact']['active'];?>" required><br><br>
     <input type="hidden" name="id" value="<?php echo $data['contact']['id'];?>"> 
     <input class="form__submit" type="submit" value="Submit">
-   <!-- //! consider dispalying as yes/no to match with serah page display of <datagrid></datagrid>  -->
+   <!-- //! consider displaying as yes/no to match with search page display of <datagrid></datagrid>  -->
     
 </form>
 
