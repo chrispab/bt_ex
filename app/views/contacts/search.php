@@ -29,9 +29,9 @@ re-validate the data in PHP as well too.  -->
     <div class="form__container">
         <label>choose</label>
         <select  class="form__input" name="active" style="flex-grow: 2; margin-left: 10px; margin-right: 10px;">
-            <option value="">All</option>
-            <option value="Y">Yes</option>
-            <option value="N">No</option>
+            <option value="">No filter</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
         </select>
         <input class="form__submit" type="submit" value="Search">
     </div>

@@ -27,12 +27,13 @@ class ContactsModel extends BaseModel {
             $sql .= " WHERE CONCAT(first_name,' ',last_name) LIKE '%" . $filters['name'] . "%'";
         }
         
-        if($filters['active'] == 'Y'){
-            $sql .= " and active = 1";
-        }
-        
-        if($filters['active'] == 'N'){
-            $sql .= " and active = 0";
+        if(isset($filters['active'])){
+            if($filters['active'] == 'Active'){
+                $sql .= " AND active = 1";
+            }
+            if($filters['active'] == 'Inactive'){
+                $sql .= " AND active = 0";
+            }
         }
 
         $stmt = $this->pdo->query($sql);
