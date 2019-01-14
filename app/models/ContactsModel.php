@@ -114,12 +114,4 @@ class ContactsModel extends BaseModel
         // $stmt->execute();
         // return $stmt->fetchAll();
     }
-
-    // public function test_input($data)
-    // {
-    //     $data = trim($data);
-    //     $data = stripslashes($data);
-    //     $data = htmlspecialchars($data);
-    //     return $data;
-    // }
 }

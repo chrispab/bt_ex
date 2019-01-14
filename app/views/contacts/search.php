@@ -1,4 +1,10 @@
 <?php require_once '../app/views/includes/header.php';?>
+
+<script
+			  src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			  crossorigin="anonymous"></script>
+
 <script type="text/javascript" src="../js/myLib.js"></script>
 
 <!-- //! include csrf protection on pages
@@ -26,13 +32,16 @@ re-validate the data in PHP as well too.  -->
 <form class="form form--search-contacts">
 <div class="form__container">
         <label>Filter Active?</label>
-        <input type="radio" name="active" value="None" checked>None<br>
-        <input type="radio" name="active" value="Active">Active<br>
-        <input type="radio" name="active" value="Inactive">Inactive<br>
+        <select name="active">
+            <option value="None">None</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select> 
+
 
         <div class="form__container">
         <input class="form__input" type="text" name="name" value="" placeholder="Contact name" style="flex-grow: 2">
-     </div> 
+</div> 
         <input class="form__submit" type="submit" value="Search">
     </div>
 
