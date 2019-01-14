@@ -33,14 +33,16 @@ XSS escape HTML chars - don’t return HTML tags to the client. defending agains
             </tr>
         </thead>
         <tbody>
-        <?php foreach($data['membership_renewals'] as $r){?>
+        <?php foreach ($data['membership_renewals'] as $r) {
+    ?>
             <tr>
-                <td><?php echo $r['date'];?></td>
-                <td><?php echo $r['package_id'];?></td>
-                <td><?php echo $r['club_id'];?></td>
-                <td><?php echo $r['end_date'];?><td>
+                <td><?php echo $r['date']; ?></td>
+                <td><?php echo $r['package_id']; ?></td>
+                <td><?php echo $r['club_id']; ?></td>
+                <td><?php echo $r['end_date']; ?><td>
             </tr>
-        <?php } ?>
+        <?php
+} ?>
         </tbody>
     </table>
     
