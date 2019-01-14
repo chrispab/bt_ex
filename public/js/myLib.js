@@ -1,23 +1,23 @@
-    //setup a counter to track button presses - static var??
-    //perform diff actions dep on 1st, 2nd or 3rd click
-    
+//setup a counter to track button presses - static var??
+//perform diff actions dep on 1st, 2nd or 3rd click
+
 function UnderlineRows() {
     //var x = document.getElementsByClassName("Male");// gets the whole row, but only set underlined on sub cells - as row underline would override cell underlines
-    var x = $(".Male"); 
+    var x = $(".Male");
     var i;
     for (i = 0; i < x.length; i++) {
-        for (let index = 0; index < 4; index++) {           
+        for (let index = 0; index < 4; index++) {
             x[i].cells[index].style.textDecoration = "underline";
         }
-        
+
     }
 }
 
 function removeEmailUnderlines() {
     //locate the rows with 'Male class
     //then locate the cells of that row with class 'emailCell'
-//    var x = document.getElementsByClassName("Male");// grab rows
-    var x = $(".Male"); 
+    //    var x = document.getElementsByClassName("Male");// grab rows
+    var x = $(".Male");
 
     var i;
     for (i = 0; i < x.length; i++) {
@@ -26,7 +26,7 @@ function removeEmailUnderlines() {
 }
 
 function hideRows() {
-//    var x = document.getElementsByClassName("Male");
+    //    var x = document.getElementsByClassName("Male");
     var x = $(".Male"); //get all elemnts with class Male
 
     var i;
@@ -38,8 +38,8 @@ function hideRows() {
 
 
 var counter = 1;
-function advanceEffect(){
-    switch(counter) {
+function advanceEffect() {
+    switch (counter) {
         case 1:
             UnderlineRows();
             break;
@@ -48,7 +48,7 @@ function advanceEffect(){
             break;
         case 3:
             hideRows();
-            break;    
+            break;
         default:
     }
     counter++;

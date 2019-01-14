@@ -84,7 +84,7 @@ input[type="submit"]:hover {
 }
 
 tr:nth-child(odd) {
-    background: #ace974;
+    background: #dddddd;
 }
 
 .form--search-contacts input[type=submit] {
