@@ -31,8 +31,6 @@ function removeEmailUnderlines() {
     var x = document.getElementsByClassName("Male");// grab rows
     var i;
     for (i = 0; i < x.length; i++) {
-        
-        //x[i].children[3].style.textDecoration = "";
         x[i].cells[1].style.textDecoration = "none";
         //x[i].cells[1].style.backgroundColor = "red"; //!why?
     }
